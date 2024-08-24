@@ -1,0 +1,61 @@
+
+h1, h4{
+  color: #f1f1f1;
+}
+
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #231e23;
+    overflow: hidden;
+  
+  }
+
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+   justify-content: center;
+   /* align-items: center; */
+    
+  }
+
+  .btn-lg{
+    width: 33vw;
+  }
+
+canvas{
+height: 80%;
+width: auto;
+}
+
+.btn-group{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.input-container{
+display: flex;
+flex-direction: row;
+width: 33vw;
+gap: 10px;
+}
+
+.enter-density{
+  width: 70%;
+}
+
+.submit-btn{
+  width: 30%;
+}
+
+  @font-face {
+    src: url(Fonts/digital-7.ttf);
+    font-family: dig; 
+  }
+  .help{
+    display: block;
+  }

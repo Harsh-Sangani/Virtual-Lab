@@ -181,7 +181,7 @@ function horizontalMovesY(){
      MovesXCount++;
      canvasXY.clearCanvas();
 
-     if(MovesYCount<316.8 ){
+     if(MovesYCount<200 ){
        waterXY3.height+=waterXY3.dh;
        if(MovesXCount<50){
          waterRisesXY1.height+=waterRisesXY1.dh;

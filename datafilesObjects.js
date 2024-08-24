@@ -153,7 +153,7 @@ let waterXY3 = { //OG cordinates 180, 280
   dx: canvasXY.xRatio * 0.5,
   dy: canvasXY.yRatio * 0.5,
   dw: 0.2,
-  dh: 0.3,
+  dh: 0.5,
   renderWater3: (x = waterXY3.x, y = waterXY3.y, w = waterXY3.width, h = waterXY3.height) => {
     ctx.fillStyle = 'rgba(72, 185, 189, 0.9)';
     // ctx.fillStyle = 'red';

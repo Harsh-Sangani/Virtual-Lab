@@ -39,9 +39,12 @@ const ToMeasure = document.getElementById("task3b");
 "changed 1 line"
 const Submit = document.getElementById("task9");
 const Material = document.getElementById("task10");
+let instruction = document.querySelector('.btn-group-vertical');
+let instructbefore = window.getComputedStyle(instruction, '::before');
 let btn = [CopperCrown,IronCrown,StartExperiment,ToMeasure];
 const controlAnimeBtnArray = [false, false, false, false];
 const addClass = ['border-5', 'border-light'];
+instruction.title='Select any one crown';
 
 const controlAnimeBtnFunc = () => {
     for (let i = 0; i < btn.length; i++) {
@@ -54,6 +57,7 @@ const controlAnimeBtnFunc = () => {
       else {
         for (let classes = 0; classes < addClass.length; classes++) {
           btn[i].classList.add(addClass[classes]);
+          instruction.style.setProperty('--visibility','visible');
         }
         btn[i].disabled = false;
       }
@@ -75,16 +79,14 @@ CopperCrown.addEventListener("click", () => { //btn2 press Animation 2
  gcrownMovesXY();
  CopperCrown.disabled = true;
  IronCrown.disabled=true;
-//  disableBtnIndex(0,false);
-//  disableBtnIndex(1,false);
-//  setTimeout(() => { 
+ instruction.style.setProperty('--visibility','hidden');
+instruction.title='Click Start Experiment';
 
     setTimeout(() => {
       disableBtnIndex(2, true); //Enable next button with the rendering of next static animation
       controlAnimeBtnFunc(); //Activate the next button and add border
     }, 5600);
 
-//   }, 6500); //time set for 6.5s(Calculated)
 });
 
 
@@ -94,7 +96,8 @@ IronCrown.addEventListener("click", () => { //btn2 press Animation 2
     MovesYCount=0;
     scrownMovesXY();
     CopperCrown.disabled = true;
-
+    instruction.style.setProperty('--visibility','hidden');
+    instruction.title='Click Start Experiment';
     setTimeout(() => {
       disableBtnIndex(2, true); //Enable next button with the rendering of next static animation
       controlAnimeBtnFunc(); //Activate the next button and add border
@@ -108,11 +111,12 @@ StartExperiment.addEventListener("click", () => { //btn2 press Animation 2
  requestFrame(horizontalMovesY);
  StartExperiment.disabled = true;
  disableBtnIndex(2,false);
-
+ instruction.style.setProperty('--visibility','hidden');
+ instruction.title='Click Measure Readings';
  setTimeout(() => {
     disableBtnIndex(3, true); //Enable next button with the rendering of next static animation
     controlAnimeBtnFunc(); //Activate the next button and add border
-  }, 11000);
+  }, 9500);
 
 });
 
@@ -123,12 +127,12 @@ ToMeasure.addEventListener("click", () => { //btn2 press Animation 2
  requestFrame(sbeakerMovesXY);
  ToMeasure.disabled = true;
  disableBtnIndex(3,false);
+ instruction.style.setProperty('--visibility','hidden');
+setTimeout(() =>{
+  instruction.style.setProperty('--visibility','visible');
+  instruction.title='Calculate and Enter Density';
 
-//  setTimeout(() => {
-//   disableBtnIndex(0, true); //Enable next button with the rendering of next static animation
-//   disableBtnIndex(1, true); //Enable next button with the rendering of next static animation
-//   controlAnimeBtnFunc(); //Activate the next button and add border
-// }, 5000);
+},6000)
 });
 
 Submit.addEventListener("click",() => {
